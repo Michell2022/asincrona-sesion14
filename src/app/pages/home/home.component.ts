@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit{
 
   
-  verificador = true;
+  verificador = false;
 
   // VARIABLE QUE ENVIARA MI OBJETO AL COMPONENTE HIJO
   subtitulo!:string;
