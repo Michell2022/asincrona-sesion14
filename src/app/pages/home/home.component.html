@@ -1,1 +1,39 @@
-<p>home works!</p>
+<div class="h-screen pt-2 fondoPantalla">
+    <form [formGroup]="formLogin" (submit)="send()">
+        <div class="border w-11/12 mx-auto sm:w-1/2 my-6 rounded-md bg-white shadow-[0px_0px_15px_0px_rgba(0,0,0,0.2)]">
+            <div class="text-4xl text-blue-500 text-center py-3">
+                <h1>Registro de Personas</h1>
+            </div>
+
+            <!-- LLAMAMOS AL COMPONENTE HIJO -->
+            <div *ngIf="verificador">
+                <app-hijo [textoHijo]="subtitulo"></app-hijo>
+            </div>
+
+            <div class="px-7 pb-6">
+                <div class="pb-5">
+                    <label for="">Nombre:</label><br>
+                    <input type="text" id="" class="border w-4/5 rounded py-1 px-2" formControlName="nombre">
+                </div>
+                <div class="pb-5">
+                    <label for="">DNI:</label><br>
+                    <input type="number" id="" class="border w-4/5 rounded py-1 px-2" formControlName="dni">
+                </div>
+                <div class="pb-5">
+                    <label for="">Estado Civil:</label><br>
+                    <select class="border w-4/5 rounded py-1 px-2" formControlName="estado_civil">
+                        <option value="">Opciones</option>
+                        <option value="soltero">Soltero</option>
+                        <option value="casado">Casado</option>
+                        <option value="divorciado">Divorciado</option>
+                        <option value="viudo">Viudo</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="bg-green-500 text-white py-1 px-5 rounded"
+                        [disabled]="formLogin.invalid">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
